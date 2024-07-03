@@ -53,7 +53,7 @@ export default function Home() {
       setLoading(false)
     }
   }
-  const updateFilter = (e: string) => {
+  const updateFilter = async (e: string) => {
     setFilter(e);
     console.log("filter", filter)
     const fData = data.filter(item => item['state-province'] === filter)

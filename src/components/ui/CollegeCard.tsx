@@ -12,8 +12,8 @@ const CollegeCard = (props: CollegeCardProps) => {
   const { toPDF, targetRef } = usePDF({ filename: 'page.pdf' });
 
   return (
-    <div className="w-[50%]">
-      <Card className="m-4" ref={targetRef}>
+    <div className="w-[50%]"ref={targetRef}>
+      <Card className="m-4" >
         <div>
           <CardHeader>
             {props.name}
