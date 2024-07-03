@@ -19,7 +19,7 @@ const CollegeCard = (props: CollegeCardProps) => {
             {props.name}
           </CardHeader>
           <CardContent>
-            <Link href={props.webPages?.length && props.webPages[0]} className="text-gray-700 underline"> College Link </Link>
+            <Link href={props.webPages?.length ? props.webPages[0] : ''} className="text-gray-700 underline"> College Link </Link>
           </CardContent>
         </div>
         <CardFooter>

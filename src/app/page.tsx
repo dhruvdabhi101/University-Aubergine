@@ -3,12 +3,11 @@ import { Button } from "@/components/ui/button";
 import CollegeCard from "@/components/ui/CollegeCard";
 import { Input } from "@/components/ui/input";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
@@ -69,7 +68,7 @@ export default function Home() {
             <Input value={searchText} onChange={handleChange} placeholder="Search country" />
             <Button onClick={searchCountry} disabled={loading}> {loading ? "loading" : 'Submit'} </Button>
           </div>
-          <div>
+          <div className="border-gray-700 border-[1px] p-2 rounded-md">
             <DropdownMenu>
               <DropdownMenuTrigger>{filter ? filter : 'Select'}</DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
