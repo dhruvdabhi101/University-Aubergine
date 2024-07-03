@@ -73,7 +73,7 @@ export default function Home() {
           </div>
           <div className="border-gray-700 border-[1px] p-2 rounded-md">
             <DropdownMenu>
-              <DropdownMenuTrigger>{filter ? filter : 'Select'}</DropdownMenuTrigger>
+              <DropdownMenuTrigger>{filter ? filter : 'State'}</DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
                 <DropdownMenuItem onClick={() => {
                   setFilterData(data)
