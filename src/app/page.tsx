@@ -39,6 +39,9 @@ export default function Home() {
   const searchCountry = async () => {
     setLoading(true);
     try {
+      if (searchText == '') {
+        return;
+      }
       const res = await axios.get(`http://universities.hipolabs.com/search?country=${searchText}`)
       setData(res.data);
       setFilterData(res.data);
@@ -53,10 +56,10 @@ export default function Home() {
       setLoading(false)
     }
   }
-  const updateFilter = async (e: string) => {
+  const updateFilter = (e: string) => {
     setFilter(e);
-    console.log("filter", filter)
     const fData = data.filter(item => item['state-province'] === filter)
+    setFilterData(fData)
     setFilterData(fData)
   }
 
@@ -73,7 +76,7 @@ export default function Home() {
               <DropdownMenuTrigger>{filter ? filter : 'Select'}</DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
                 <DropdownMenuItem onClick={() => {
-                  setFilterData(data);
+                  setFilterData(data)
                   setFilter('')
                 }}> Select </DropdownMenuItem>
                 <DropdownMenuSeparator />
